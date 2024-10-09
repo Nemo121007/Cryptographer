@@ -10,7 +10,7 @@ def atbash_cipher_decryption(self, alf):
 
 
 if __name__ == "__main__":
-    decryption_string = "пример"
+    decryption_string = "Привет, мир!"
     print(decryption_string)
     encryption_string = atbash_cipher_decryption(decryption_string, "абвгдеёжзийклмнопрстуфхцчшщъыьэюя")
     print(encryption_string)
