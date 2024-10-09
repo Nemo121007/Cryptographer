@@ -26,7 +26,6 @@ def main_menu():
             print("Некорректный ввод. Попробуйте снова.")
             continue
 
-        # Вызов соответствующей функции
         match choice:
             case 1:
                 run_caesar_cipher()
