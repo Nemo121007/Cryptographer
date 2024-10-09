@@ -38,9 +38,8 @@ jobs:
       - name: Display coverage report
         run: cat coverage.xml
 
-      - name: Rewrite coverage report
-        run: sed -i 's|<source>/home/runner/work/python_test/python_test/src</source>|<source>src</source>|g' coverage.xml
-
+#      - name: Rewrite coverage report
+#        run: sed -i 's|<source>/home/runner/work/python_test/python_test/src</source>|<source>src</source>|g' coverage.xml
 
       - name: Display rewrite coverage report
         run: cat coverage.xml
