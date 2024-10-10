@@ -32,16 +32,16 @@ jobs:
 
       - name: Run tests with pytest and generate coverage report
         run: |
-          ./venv/bin/pytest --cov=CryptographerStr --cov-report=xml:coverage.xml ./tests/
+          ./venv/bin/pytest
 
       - name: Upload coverage report to Coveralls
         run: ./venv/bin/coveralls
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+        continue-on-error: true
 
       - name: Display coverage report
         run: cat coverage.xml
-        continue-on-error: true
 
       - name: Rewrite coverage report
         run: sed -i 's|<source>/home/runner/work/Cryptographer/Cryptographer/CryptographerStr</source>|<source>CryptographerStr</source>|g' coverage.xml
