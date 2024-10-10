@@ -1,4 +1,4 @@
-name: Merge dev into master
+name: Merge into master
 
 on:
   workflow_run:

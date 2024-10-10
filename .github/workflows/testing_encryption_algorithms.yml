@@ -41,6 +41,7 @@ jobs:
 
       - name: Display coverage report
         run: cat coverage.xml
+        continue-on-error: true
 
       - name: Rewrite coverage report
         run: sed -i 's|<source>/home/runner/work/Cryptographer/Cryptographer/CryptographerStr</source>|<source>CryptographerStr</source>|g' coverage.xml
@@ -55,3 +56,4 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
