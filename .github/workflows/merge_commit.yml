@@ -1,0 +1,40 @@
+name: Merge dev into master
+
+on:
+  workflow_run:
+    workflows: ["Start tests"]
+    types:
+      - completed
+
+jobs:
+  merge:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Fetch all branches
+        run: git fetch origin
+
+      - name: Checkout master branch
+        run: |
+          git checkout master
+          git pull origin master
+
+      - name: Merge dev into master
+        run: |
+          git fetch origin dev:dev 
+          git merge --no-ff --allow-unrelated-histories --strategy-option theirs dev
+          git push origin master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
