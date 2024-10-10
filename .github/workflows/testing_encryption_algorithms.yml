@@ -31,27 +31,27 @@ jobs:
         run: |
           ./venv/bin/pytest --cov=CryptographerStr --cov-report=xml:coverage.xml ./tests/
 
-      - name: Upload coverage report to Coveralls
-        run: ./venv/bin/coveralls
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
-
-      - name: Display coverage report
-        run: cat coverage.xml
-
-      - name: Rewrite coverage report
-        run: sed -i 's|<source>/home/runner/work/Cryptographer/Cryptographer/CryptographerStr</source>|<source>CryptographerStr</source>|g' coverage.xml
-
-      - name: Display rewrite coverage report
-        run: cat coverage.xml
-
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        with:
-          projectBaseDir: .
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Upload coverage report to Coveralls
+#        run: ./venv/bin/coveralls
+#        env:
+#          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+#
+#      - name: Display coverage report
+#        run: cat coverage.xml
+#
+#      - name: Rewrite coverage report
+#        run: sed -i 's|<source>/home/runner/work/Cryptographer/Cryptographer/CryptographerStr</source>|<source>CryptographerStr</source>|g' coverage.xml
+#
+#      - name: Display rewrite coverage report
+#        run: cat coverage.xml
+#
+#      - name: SonarCloud Scan
+#        uses: SonarSource/sonarcloud-github-action@master
+#        with:
+#          projectBaseDir: .
+#        env:
+#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Merge dev into master
         if: success()
