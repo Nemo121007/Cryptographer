@@ -10,8 +10,6 @@
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Nemo121007_Cryptographer&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=Nemo121007_Cryptographer)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Nemo121007_Cryptographer&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Nemo121007_Cryptographer)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Nemo121007_Cryptographer&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Nemo121007_Cryptographer)
-![GitHub Actions](https://github.com/Nemo121007/Cryptographer/actions/workflows/testing_encryption_algorithms.yml/badge.svg)
-![GitHub Actions](https://github.com/Nemo121007/Cryptographer/actions/workflows/merge_commit.yml/badge.svg)
 
 # Проект, реализующий ряд ручных алгоритмов шифрования
 
