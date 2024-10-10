@@ -1,5 +1,6 @@
 [report]
 exclude_lines =
     if __name__\s*==\s*['"]__main__['"]\s*:
-source =
-    CryptographerStr
+
+[xml]
+output = coverage.xml
