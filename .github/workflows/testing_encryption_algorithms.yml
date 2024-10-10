@@ -61,7 +61,7 @@ jobs:
           git fetch origin master
           git checkout master
           git pull origin master
-          git merge --no-ff dev
+          git merge --no-ff --allow-unrelated-histories dev
           git push origin master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
