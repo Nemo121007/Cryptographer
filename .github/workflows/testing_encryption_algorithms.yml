@@ -56,6 +56,9 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: clean configuration Git
+        run: git config --global --unset user.name && git config --global --unset user.email
+
       - name: Merge dev into master
         if: success()
         run: |
@@ -64,7 +67,7 @@ jobs:
           git fetch origin master
           git checkout master
           git pull origin master
-          git merge --no-ff --allow-unrelated-histories --strategy-option theirs dev
+          git merge --no-ff --strategy-option theirs dev
           git push origin master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
