@@ -32,7 +32,7 @@ jobs:
 
       - name: Run tests with pytest and generate coverage report
         run: |
-          ./venv/bin/pytest
+          ./venv/bin/pytest --cov=CryptographerStr --cov-report=xml:coverage.xml ./tests/
 
       - name: Upload coverage report to Coveralls
         run: ./venv/bin/coveralls

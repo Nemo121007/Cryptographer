@@ -1,12 +1,3 @@
-[run]
-source = CryptographerStr
-
 [report]
 exclude_lines =
     if __name__\s*==\s*['"]__main__['"]\s*:
-source =
-    CryptographerStr
-    tests
-
-[xml]
-output = coverage.xml
