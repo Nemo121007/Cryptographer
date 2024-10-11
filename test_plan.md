@@ -228,7 +228,7 @@
 *Входные данные:* "hello", step = 1.5
 
 *Ожидаемый результат:* TypeError("unidentified type object in step")
-#### Тест М1.23: Вызов метода шифрования алгоритма Цезаря из строки с нестроковым алфавитом (test_cesar_unidentified_object_in_alf)
+#### Тест М1.24: Вызов метода шифрования алгоритма Цезаря из строки с нестроковым алфавитом (test_cesar_unidentified_object_in_alf)
 *Тип теста:* Негативный
 
 *Описание:* Проверка вызова метода шифрования строки с нестроковым алфавитом
@@ -270,7 +270,7 @@
 
 *Описание:* Проверка корректности шифрования строки
 
-*Метод:* CryptographerStr/atbash_cipher.py{atbash_cipher_decryption}
+*Метод:* CryptographerStr/atbash_cipher.py{atbash_cipher_decryption(str, alf)}
 
 *Входные данные:* (cipher = "Hello", alf = "abcdefghijklmnopqrstuvwxyz")
 
@@ -280,128 +280,269 @@
 
 *Описание:* Проверка корректности дешифрования строки
 
-*Метод:* CryptographerStr/atbash_cipher.py{atbash_cipher_decryption}
+*Метод:* CryptographerStr/atbash_cipher.py{atbash_cipher_decryption(str, alf)}
 
 *Входные данные:* (cipher = "Hvool", alf = "abcdefghijklmnopqrstuvwxyz")
 
-**Ожидаемый результат:** "Hello"
+*Ожидаемый результат:* "Hello"
 #### Тест М2.3: Дешифрование зашифрованной строки (test_encryption_decryption)
-**Тип теста:** Позитивный
+*Тип теста:* Позитивный
 
-**Описание:** Проверка корректности дешифрования зашифрованной строки
+*Описание:* Проверка корректности дешифрования зашифрованной строки
 
-**Метод:** CryptographerStr/atbash_cipher.py{atbash_cipher_decryption}
+*Метод:* CryptographerStr/atbash_cipher.py{atbash_cipher_decryption(str, alf)}
 
-**Входные данные:** (cipher = "Hello", alf = "abcdefghijklmnopqrstuvwxyz")
+*Входные данные:* (cipher = "Hello", alf = "abcdefghijklmnopqrstuvwxyz")
 
-**Ожидаемый результат:** "Hello"
+*Ожидаемый результат:* "Hello"
 #### Тест М2.4: Шифрование пустой строки (test_decryption_empty)
-**Тип теста:** Позитивный
+*Тип теста:* Позитивный
 
-**Описание:** Проверка корректности шифрования пустой строки
+*Описание:* Проверка корректности шифрования пустой строки
 
-**Метод:** CryptographerStr/atbash_cipher.py{atbash_cipher_decryption}
+*Метод:* CryptographerStr/atbash_cipher.py{atbash_cipher_decryption(str, alf)}
 
-**Входные данные:** (cipher = "", alf = "abcdefghijklmnopqrstuvwxyz")
+*Входные данные:* (cipher = "", alf = "abcdefghijklmnopqrstuvwxyz")
 
-**Ожидаемый результат:** ""
+*Ожидаемый результат:* ""
 #### Тест М2.5: Шифрование строки из нескольких слов(test_encryption_string)
-**Тип теста:** Позитивный
+*Тип теста:* Позитивный
 
-**Описание:** Проверка корректности шифрования строки из нескольких слов
+*Описание:* Проверка корректности шифрования строки из нескольких слов
 
-**Метод:** CryptographerStr/atbash_cipher.py{atbash_cipher_decryption}
+*Метод:* CryptographerStr/atbash_cipher.py{atbash_cipher_decryption(str, alf)}
 
-**Входные данные:** (cipher = "Hello world", alf = "abcdefghijklmnopqrstuvwxyz")
+*Входные данные:* (cipher = "Hello world", alf = "abcdefghijklmnopqrstuvwxyz")
 
-**Ожидаемый результат:** "Hvool dliow"
+*Ожидаемый результат:* "Hvool dliow"
 #### Тест М2.6: Дешифрование строки из нескольких слов(test_decryption_string)
-**Тип теста:** Позитивный
+*Тип теста:* Позитивный
 
-**Описание:** Проверка корректности дешифрования строки из нескольких слов
+*Описание:* Проверка корректности дешифрования строки из нескольких слов
 
-**Метод:** CryptographerStr/atbash_cipher.py{atbash_cipher_decryption}
+*Метод:* CryptographerStr/atbash_cipher.py{atbash_cipher_decryption(str, alf)}
 
-**Входные данные:** (cipher = "Hvool dliow", alf = "abcdefghijklmnopqrstuvwxyz")
+*Входные данные:* (cipher = "Hvool dliow", alf = "abcdefghijklmnopqrstuvwxyz")
 
-**Ожидаемый результат:** "Hello world"
+*Ожидаемый результат:* "Hello world"
 #### Тест М2.7: Шифрование и дешифрование строки (test_encryption_decryption_string)
-**Тип теста:** Позитивный
+*Тип теста:* Позитивный
 
-**Описание:** Проверка корректности дешифрования зашифрованной строки
+*Описание:* Проверка корректности дешифрования зашифрованной строки
 
-**Метод:** CryptographerStr/atbash_cipher.py{atbash_cipher_decryption}
+*Метод:* CryptographerStr/atbash_cipher.py{atbash_cipher_decryption(str, alf)}
 
-**Входные данные:** (cipher = "Hello world", alf = "abcdefghijklmnopqrstuvwxyz")
+*Входные данные:* (cipher = "Hello world", alf = "abcdefghijklmnopqrstuvwxyz")
 
-**Ожидаемый результат:** "Hello world"
+*Ожидаемый результат:* "Hello world"
 #### Тест М2.8: Шифрование строки из одного символа 1(test_encryption_one_char_1)
-**Тип теста:** Позитивный
+*Тип теста:* Позитивный
 
-**Описание:** Проверка корректности зашифрованной строки из одного символа
+*Описание:* Проверка корректности зашифрованной строки из одного символа
 
-**Метод:** CryptographerStr/atbash_cipher.py{atbash_cipher_decryption}
+*Метод:* CryptographerStr/atbash_cipher.py{atbash_cipher_decryption(str, alf)}
 
-**Входные данные:** (cipher = "a", alf = "abcdefghijklmnopqrstuvwxyz")
+*Входные данные:* (cipher = "a", alf = "abcdefghijklmnopqrstuvwxyz")
 
-**Ожидаемый результат:** "z"
+*Ожидаемый результат:* "z"
 #### Тест М2.9: Шифрование строки из одного символа 2(test_encryption_one_char_2)
-**Тип теста:** Позитивный
+*Тип теста:* Позитивный
 
-**Описание:** Проверка корректности зашифрованной строки из одного символа
+*Описание:* Проверка корректности зашифрованной строки из одного символа
 
-**Метод:** CryptographerStr/atbash_cipher.py{atbash_cipher_decryption}
+*Метод:* CryptographerStr/atbash_cipher.py{atbash_cipher_decryption(str, alf)}
 
-**Входные данные:** (cipher = "c", alf = "abcdefghijklmnopqrstuvwxyz")
+*Входные данные:* (cipher = "c", alf = "abcdefghijklmnopqrstuvwxyz")
 
-**Ожидаемый результат:** "x"
+*Ожидаемый результат:* "x"
 #### Тест М2.10: Шифрование строки из одного символа 3(test_encryption_one_char_3)
-**Тип теста:** Позитивный
+*Тип теста:* Позитивный
 
-**Описание:** Проверка корректности зашифрованной строки из одного символа
+*Описание:* Проверка корректности зашифрованной строки из одного символа
 
-**Метод:** CryptographerStr/atbash_cipher.py{atbash_cipher_decryption}
+*Метод:* CryptographerStr/atbash_cipher.py{atbash_cipher_decryption(str, alf)}
 
-**Входные данные:** (cipher = "n", alf = "abcdefghijklmnopqrstuvwxyz")
+*Входные данные:* (cipher = "n", alf = "abcdefghijklmnopqrstuvwxyz")
 
-**Ожидаемый результат:** "m"
+*Ожидаемый результат:* "m"
 #### Тест М2.11: Шифрование и дешифрование строки из одного символа (test_encryption_decryption_one_char)
-**Тип теста:** Позитивный
+*Тип теста:* Позитивный
 
-**Описание:** Проверка корректности расшифрования зашифрованной строки из одного символа
+*Описание:* Проверка корректности расшифрования зашифрованной строки из одного символа
 
-**Метод:** CryptographerStr/atbash_cipher.py{atbash_cipher_decryption}
+*Метод:* CryptographerStr/atbash_cipher.py{atbash_cipher_decryption(str, alf)}
 
-**Входные данные:** (cipher = "m", alf = "abcdefghijklmnopqrstuvwxyz")
+*Входные данные:* (cipher = "m", alf = "abcdefghijklmnopqrstuvwxyz")
 
-**Ожидаемый результат:** "m"
+*Ожидаемый результат:* "m"
 #### Тест М2.12: Шифрование строки, содержащей символы, отсутствующие в алфавите(test_encryption_missing_characters)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности шифрования строки, содержащей символы, отсутствующие в алфавите
+
+*Метод:* CryptographerStr/atbash_cipher.py{atbash_cipher_decryption(str, alf)}
+
+*Входные данные:* (cipher = "Hello, world!", alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* "Hvool, dliow!"
+#### Тест М2.13: Дешифрование строки, содержащей символы, отсутствующие в алфавите(test_decryption_missing_characters)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности дешифрования строки, содержащей символы, отсутствующие в алфавите
+
+*Метод:* CryptographerStr/atbash_cipher.py{atbash_cipher_decryption(str, alf)}
+
+*Входные данные:* (cipher = "Hvool, dliow!", alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* "Hello, world!"
+#### Тест М2.14: Шифрование и дешифрование строки, содержащей символы, отсутствующие в алфавите(test_encryption_decryption_missing_characters)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности дешифрования зашифрованной строки, содержащей символы, отсутствующие в алфавите
+
+*Метод:* CryptographerStr/atbash_cipher.py{atbash_cipher_decryption(str, alf)}
+
+*Входные данные:* (cipher = "Hello, world!", alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* "Hello, world!"
+### Шифр Цезаря
+#### Тест М3.1: Шифрование строки (test_encryption)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности шифрования строки
+
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "hello", step = 1, alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* "ifmmp"
+#### Тест М3.2: Шифрование строки с нулевым шагом(test_zero_step)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности шифрования строки с нулевым шагом
+
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "hello", step = 0, alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* "hello"
+#### Тест М3.3: Шифрование строки с отрицательным шагом(test_negative_step)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности шифрования строки с отрицательным шагом
+
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "hello", step = -1, alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* "gdkkn"
+#### Тест М3.4: Шифрование строки с шагом за пределы алфавита(test_big_step)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности шифрования строки с шагом за пределы алфавита
+
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "xyz", step = 3, alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* "abc"
+#### Тест М3.5: Шифрование строки с отрицательным шагом за пределы алфавита(test_big_step)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности шифрования строки с отрицательным шагом за пределы алфавита
+
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "abc", step = -3, alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* "xyz"
+#### Тест М3.6: Дешифрование строки (test_decryption)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности дешифрования строки
+
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "ifmmp", step = -1, alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* "hello"
+#### Тест М3.7: Дешифрование зашифрованной строки (test_encryption_decryption)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности дешифрования зашифрованной строки
+
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "hello", step = 1, alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* "hello"
+#### Тест М3.8: Шифрование пустой строки (test_decryption_empty)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности шифрования пустой строки
+
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "", step = 1, alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* ""
+#### Тест М3.9: Шифрование строки из нескольких слов(test_encryption_string)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности шифрования строки из нескольких слов
+
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "hello world", step = 1, alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* "ifmmp xpsme"
+#### Тест М3.10: Дешифрование строки из нескольких слов(test_decryption_string)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности дешифрования строки из нескольких слов
+
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "ifmmp xpsme", step = 1, alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* "Hello world"
+#### Тест М3.11: Шифрование и дешифрование строки (test_encryption_decryption_string)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности дешифрования зашифрованной строки
+
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "hello world", step = 1, alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* "hello world"
+#### Тест М3.12: Шифрование строки, содержащей символы, отсутствующие в алфавите(test_encryption_missing_characters)
 **Тип теста:** Позитивный
 
 **Описание:** Проверка корректности шифрования строки, содержащей символы, отсутствующие в алфавите
 
-**Метод:** CryptographerStr/atbash_cipher.py{atbash_cipher_decryption}
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
 
-**Входные данные:** (cipher = "Hello, world!", alf = "abcdefghijklmnopqrstuvwxyz")
+**Входные данные:** (cipher = "Hello, world!", step = 1, alf = "abcdefghijklmnopqrstuvwxyz")
 
-**Ожидаемый результат:** "Hvool, dliow!"
-#### Тест М2.13: Дешифрование строки, содержащей символы, отсутствующие в алфавите(test_decryption_missing_characters)
+**Ожидаемый результат:** "Hfmmp, xpsme!"
+#### Тест М3.13: Дешифрование строки, содержащей символы, отсутствующие в алфавите(test_decryption_missing_characters)
 **Тип теста:** Позитивный
 
 **Описание:** Проверка корректности дешифрования строки, содержащей символы, отсутствующие в алфавите
 
-**Метод:** CryptographerStr/atbash_cipher.py{atbash_cipher_decryption}
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
 
-**Входные данные:** (cipher = "Hvool, dliow!", alf = "abcdefghijklmnopqrstuvwxyz")
+**Входные данные:** (cipher = "Hfmmp, xpsme!", step = 1, alf = "abcdefghijklmnopqrstuvwxyz")
 
 **Ожидаемый результат:** "Hello, world!"
-#### Тест М2.14: Шифрование и дешифрование строки, содержащей символы, отсутствующие в алфавите(test_encryption_decryption_missing_characters)
+#### Тест М3.14: Шифрование и дешифрование строки, содержащей символы, отсутствующие в алфавите(test_encryption_decryption_missing_characters)
 **Тип теста:** Позитивный
 
 **Описание:** Проверка корректности дешифрования зашифрованной строки, содержащей символы, отсутствующие в алфавите
 
-**Метод:** CryptographerStr/atbash_cipher.py{atbash_cipher_decryption}
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
 
-**Входные данные:** (cipher = "Hello, world!", alf = "abcdefghijklmnopqrstuvwxyz")
+**Входные данные:** (cipher = "Hello, world!", step = 1, alf = "abcdefghijklmnopqrstuvwxyz")
 
 **Ожидаемый результат:** "Hello, world!"

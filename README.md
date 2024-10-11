@@ -22,4 +22,5 @@
 Статус последней проверки sonarcloud.io: [![Sonarcloud](https://sonarcloud.io/api/project_badges/measure?project=Nemo121007_Cryptographer&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Nemo121007_Cryptographer)
 
 ## Список реализованных алгоритмов:
-* Шифрование Атбаш
+* Шифрование Атбаш 
+* Шифр Цезаря
