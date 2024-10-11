@@ -1,13 +1,11 @@
 def cesar_cipher_decryption(text, step, alf):
-    code_sh = ""
+    decrypted_text = ""
     for char in text:
-        for j in range(len(alf)):
-            if alf[j] == char:
-                c = j
-                c += step
-                if c >= len(alf):
-                    c -= len(alf)
-                code_sh += alf[c]
-                break
-    return code_sh
+        if char in alf:
+            original_idx = alf.index(char)
+            new_idx = (original_idx + step) % len(alf)
+            decrypted_text += alf[new_idx]
+        else:
+            decrypted_text += char
+    return decrypted_text
 
