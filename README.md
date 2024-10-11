@@ -15,7 +15,7 @@
 
 Статус последнего тестирования: [![Start tests](https://github.com/Nemo121007/Cryptographer/actions/workflows/testing_encryption_algorithms.yml/badge.svg?branch=dev)](https://github.com/Nemo121007/Cryptographer/actions/workflows/testing_encryption_algorithms.yml)
 
-Статус последнего обновления master-ветки: [![Merge into master](https://github.com/Nemo121007/Cryptographer/actions/workflows/merge_commit.yml/badge.svg?branch=master)](https://github.com/Nemo121007/Cryptographer/actions/workflows/merge_commit.yml)
+Статус последнего обновления master-ветки: [![Build Status](https://github.com/Nemo121007/Cryptographer/actions/workflows/main.yml/badge.svg)](https://github.com/Nemo121007/Cryptographer/actions)
 
 Статус последней проверки coveralls.io: [![Coverage Status](https://coveralls.io/repos/github/Nemo121007/Cryptographer/badge.svg?branch=master)](https://coveralls.io/github/Nemo121007/Cryptographer?branch=master)
 
