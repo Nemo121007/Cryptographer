@@ -128,7 +128,7 @@
 *Входные данные:* "hello", alf = "abc"
 
 *Ожидаемый результат:* "hello", alf = "abc"
-#### Тест М1.14: Вызов метода шифрования строки из нестрокового объекта (test_atbash_cipher_decryption_raises_type_error_for_invalid_self)
+#### Тест М1.14: Вызов метода шифрования Атбаш из строки из нестрокового объекта (test_atbash_cipher_decryption_raises_type_error_for_invalid_self)
 *Тип теста:* Негативный
 
 *Описание:* Проверка вызова метода шифрования строки из нестрокового объекта
@@ -138,7 +138,7 @@
 *Входные данные:* 123
 
 *Ожидаемый результат:* TypeError("unidentified type object in str")
-#### Тест М1.15: Вызов метода шифрования строки с нестроковым алфавитом (test_unidentified_object_in_alf)
+#### Тест М1.15: Вызов метода шифрования Атбаш из строки с нестроковым алфавитом (test_atbash_unidentified_object_in_alf)
 *Тип теста:* Негативный
 
 *Описание:* Проверка вызова метода шифрования строки с нестроковым алфавитом
@@ -146,6 +146,96 @@
 *Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.atbash_cipher_decryption(str, alf)}
 
 *Входные данные:* "hello", alf=123
+
+*Ожидаемый результат:* TypeError("unidentified type object in alf")
+#### Тест М1.16: Тестирование декоратора функции шифрования алгоритма Цезаря (передача текста)(test_cesar_cipher_decryption_string)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка декоратора функции шифрования алгоритма Цезаря
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.cesar_cipher_decryption(str, step, alf)}
+
+*Входные данные:* "hello"
+
+*Ожидаемый результат:* "hello"
+#### Тест М1.17: Тестирование декоратора функции шифрования алгоритма Цезаря(алфавит по умолчанию)(test_cesar_cipher_decryption_empty_alf)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка алфавита по умолчанию в декораторе функции шифрования алгоритма Цезаря
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.cesar_cipher_decryption(str, step, alf)}
+
+*Входные данные:* Отсутствуют
+
+*Ожидаемый результат:* alf == "abcdefghijklmnopqrstuvwxyz"
+#### Тест М1.18: Тестирование декоратора функции шифрования алгоритма Цезаря(шаг по умолчанию)(test_cesar_cipher_decryption_empty_step)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка шага по умолчанию в декораторе функции шифрования алгоритма Цезаря
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.cesar_cipher_decryption(str, step, alf)}
+
+*Входные данные:* Отсутствуют
+
+*Ожидаемый результат:* step == 1
+#### Тест М1.19: Тестирование декоратора функции шифрования алгоритма Цезаря (передача теста, шаг и алфавит по умолчанию)(test_cesar_cipher_decryption_string_and_alf_and_step)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка передачи текста, шаг и алфавита по умолчанию в декораторе функции шифрования алгоритма Цезаря
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.cesar_cipher_decryption(str, step, alf)}
+
+*Входные данные:* "hello"
+
+*Ожидаемый результат:* "hello", step == 1, alf = "abcdefghijklmnopqrstuvwxyz"
+#### Тест М1.20: Тестирование декоратора функции шифрования алгоритма Цезаря(передача теста, шага и алфавита) (test_cesar_cipher_decryption_alf)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка передачи теста, шага и алфавита в декораторе функции шифрования алгоритма Цезаря
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.cesar_cipher_decryption(str, step, alf)}
+
+*Входные данные:* "hello", step = 5, alf = "abc"
+
+*Ожидаемый результат:* "hello", step == 5, alf = "abc"
+#### Тест М1.21: Вызов метода шифрования алгоритма Цезаря из строки из нестрокового объекта (test_cesar_cipher_decryption_raises_type_error_for_invalid_self)
+*Тип теста:* Негативный
+
+*Описание:* Проверка вызова метода шифрования строки из нестрокового объекта
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.cesar_cipher_decryption(str, step, alf)}
+
+*Входные данные:* 123
+
+*Ожидаемый результат:* TypeError("unidentified type object in str")
+#### Тест М1.23: Вызов метода шифрования алгоритма Цезаря из строки с нечисленным шагом(test_cesar_unidentified_object_in_step)
+*Тип теста:* Негативный
+
+*Описание:* Проверка вызова метода шифрования строки с нецелочисленным шагом
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.cesar_cipher_decryption(str, step, alf)}
+
+*Входные данные:* "hello", step = []
+
+*Ожидаемый результат:* TypeError("unidentified type object in step")
+#### Тест М1.23: Вызов метода шифрования алгоритма Цезаря из строки с нецелочисленным шагом(test_cesar_unidentified_object_in_step_float)
+*Тип теста:* Негативный
+
+*Описание:* Проверка вызова метода шифрования строки с нецелочисленным шагом
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.cesar_cipher_decryption(str, step, alf)}
+
+*Входные данные:* "hello", step = 1.5
+
+*Ожидаемый результат:* TypeError("unidentified type object in step")
+#### Тест М1.23: Вызов метода шифрования алгоритма Цезаря из строки с нестроковым алфавитом (test_cesar_unidentified_object_in_alf)
+*Тип теста:* Негативный
+
+*Описание:* Проверка вызова метода шифрования строки с нестроковым алфавитом
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.cesar_cipher_decryption(str, step, alf)}
+
+*Входные данные:* "hello", step = 1, alf=123
 
 *Ожидаемый результат:* TypeError("unidentified type object in alf")
 #### Тест М1.1: 

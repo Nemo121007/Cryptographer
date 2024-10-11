@@ -1,4 +1,4 @@
-def cesar(alf, text, step):
+def cesar_cipher_decryption(text, step, alf):
     code_sh = ""
     for char in text:
         for j in range(len(alf)):
@@ -8,6 +8,6 @@ def cesar(alf, text, step):
                 if c >= len(alf):
                     c -= len(alf)
                 code_sh += alf[c]
-                break  # Прерываем цикл, как только символ найден
+                break
     return code_sh
 
