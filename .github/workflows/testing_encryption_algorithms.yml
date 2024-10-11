@@ -90,6 +90,9 @@ jobs:
           name: coverage-report
           path: ./
 
+      - name: Display coverage report
+        run: cat coverage.xml
+
       - name: Upload coverage report to Coveralls
         run: ./venv/bin/coveralls
         env:
