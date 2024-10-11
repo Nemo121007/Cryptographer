@@ -104,9 +104,96 @@ class TestCryptographerStr:
         with pytest.raises(TypeError, match="unidentified type object in str"):
             CryptographerStr.atbash_cipher_decryption(non_str_instance)
 
-    def test_unidentified_object_in_alf(self):
+    def test_atbash_unidentified_object_in_alf(self):
         with pytest.raises(TypeError, match="unidentified type object in alf"):
             s = (CryptographerStr("hello")).atbash_cipher_decryption(123)
     # endregion
+
+    # region шифр цезаря
+    def test_cesar_cipher_decryption_string(self, monkeypatch):
+        # Создаем фиктивную функцию для имитации вызова
+        def mock_cesar_cipher_decryption(input_str, step, alf):
+            assert input_str == "hello"
+            return "mocked_result"
+
+        # Используем pytest monkeypatch для замены реальной функции на фиктивную
+        monkeypatch.setattr('CryptographerStr.cesar_cipher.cesar_cipher_decryption', mock_cesar_cipher_decryption)
+
+        s = CryptographerStr("hello")
+
+        # Проверяем результат вызова метода
+        result = s.cesar_cipher_decryption()
+        assert result == "mocked_result"
+
+    def test_cesar_cipher_decryption_empty_alf(self, monkeypatch):
+        def mock_cesar_cipher_decryption(input_str, step, alf):
+            assert alf == "abcdefghijklmnopqrstuvwxyz"
+            return "mocked_result"
+
+        monkeypatch.setattr('CryptographerStr.cesar_cipher.cesar_cipher_decryption', mock_cesar_cipher_decryption)
+
+        s = CryptographerStr()
+
+        result = s.cesar_cipher_decryption()
+        assert result == "mocked_result"
+
+    def test_cesar_cipher_decryption_empty_step(self, monkeypatch):
+        def mock_cesar_cipher_decryption(input_str, step, alf):
+            assert step == 1
+            return "mocked_result"
+
+        monkeypatch.setattr('CryptographerStr.cesar_cipher.cesar_cipher_decryption', mock_cesar_cipher_decryption)
+
+        s = CryptographerStr()
+
+        result = s.cesar_cipher_decryption()
+        assert result == "mocked_result"
+
+    def test_cesar_cipher_decryption_string_and_alf_and_step(self, monkeypatch):
+        def mock_cesar_cipher_decryption(input_str, step, alf):
+            assert input_str == "hello"
+            assert step == 5
+            assert alf == "abcdefghijklmnopqrstuvwxyz"
+            return "mocked_result"
+
+        monkeypatch.setattr('CryptographerStr.cesar_cipher.cesar_cipher_decryption', mock_cesar_cipher_decryption)
+
+        s = CryptographerStr("hello")
+
+        result = s.cesar_cipher_decryption(5)
+        assert result == "mocked_result"
+
+    def test_cesar_cipher_decryption_alf(self, monkeypatch):
+        def mock_cesar_cipher_decryption(input_str, step, alf):
+            assert input_str == "hello"
+            assert step == 5
+            assert alf == "abc"
+            return "mocked_result"
+
+        monkeypatch.setattr('CryptographerStr.cesar_cipher.cesar_cipher_decryption', mock_cesar_cipher_decryption)
+
+        s = CryptographerStr("hello")
+
+        result = s.cesar_cipher_decryption(5, "abc")
+        assert result == "mocked_result"
+
+    def test_cesar_cipher_decryption_raises_type_error_for_invalid_self(self):
+        non_str_instance = 123
+
+        with pytest.raises(TypeError, match="unidentified type object in str"):
+            CryptographerStr.cesar_cipher_decryption(non_str_instance)
+
+    def test_cesar_unidentified_object_in_step(self):
+        with pytest.raises(TypeError, match="unidentified type object in step"):
+            s = (CryptographerStr("hello")).cesar_cipher_decryption([])
+
+    def test_cesar_unidentified_object_in_step_float(self):
+        with pytest.raises(TypeError, match="unidentified type object in step"):
+            s = (CryptographerStr("hello")).cesar_cipher_decryption(1.5)
+
+    def test_cesar_unidentified_object_in_alf(self):
+        with pytest.raises(TypeError, match="unidentified type object in alf"):
+            s = (CryptographerStr("hello")).cesar_cipher_decryption(1, [])
+    # endregion шифр цезаря
 
     # endregion
