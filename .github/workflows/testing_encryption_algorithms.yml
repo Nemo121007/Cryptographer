@@ -1,4 +1,4 @@
-name: Start tests
+name: Test dev, merge master and send reports
 
 on:
   push:
