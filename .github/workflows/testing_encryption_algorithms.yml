@@ -34,12 +34,6 @@ jobs:
         run: |
           ./venv/bin/pytest --cov=CryptographerStr --cov-report=xml:coverage.xml ./tests/
 
-      - name: Upload coverage.xml as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: coverage-report
-          path: coverage.xml
-
   merge:
     needs: test
     if: ${{ needs.test.result == 'success' }}
@@ -84,12 +78,6 @@ jobs:
         with:
           ref: master
 
-      - name: Download coverage.xml artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: coverage-report
-          path: ./
-
       - name: Setup Python 3.12
         uses: actions/setup-python@v5
         with:
@@ -103,6 +91,10 @@ jobs:
           python3 -m venv venv
           ./venv/bin/pip install -r requirements.txt
           ./venv/bin/pip install pytest-cov coveralls
+
+      - name: Run tests with pytest and generate coverage report
+        run: |
+          ./venv/bin/pytest --cov=CryptographerStr --cov-report=xml:coverage.xml ./tests/
 
       - name: Upload coverage report to Coveralls
         run: ./venv/bin/coveralls
