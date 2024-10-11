@@ -1,3 +1,6 @@
+from atbash_cipher import atbash_cipher_decryption
+
+
 class CryptographerStr(str):
     _alf = "abcdefghijklmnopqrstuvwxyz"
 
@@ -6,5 +9,4 @@ class CryptographerStr(str):
         return super().__new__(cls, value)
 
     def atbash_cipher_decryption(self):
-        from atbash_cipher import atbash_cipher_decryption
         return atbash_cipher_decryption(self, self._alf)
