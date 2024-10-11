@@ -128,6 +128,26 @@
 *Входные данные:* "hello", alf = "abc"
 
 *Ожидаемый результат:* "hello", alf = "abc"
+#### Тест М1.14: Вызов метода шифрования строки из нестрокового объекта (test_atbash_cipher_decryption_raises_type_error_for_invalid_self)
+*Тип теста:* Негативный
+
+*Описание:* Проверка вызова метода шифрования строки из нестрокового объекта
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.atbash_cipher_decryption(str, alf)}
+
+*Входные данные:* 123
+
+*Ожидаемый результат:* TypeError("unidentified type object in str")
+#### Тест М1.15: Вызов метода шифрования строки с нестроковым алфавитом (test_unidentified_object_in_alf)
+*Тип теста:* Негативный
+
+*Описание:* Проверка вызова метода шифрования строки с нестроковым алфавитом
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.atbash_cipher_decryption(str, alf)}
+
+*Входные данные:* "hello", alf=123
+
+*Ожидаемый результат:* TypeError("unidentified type object in alf")
 #### Тест М1.1: 
 *Тип теста:* Позитивный
 
