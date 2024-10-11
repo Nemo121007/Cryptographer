@@ -9,9 +9,12 @@ class CryptographerStr(str):
             raise TypeError("unidentified type object")
 
     def atbash_cipher_decryption(self, alf=None):
+        if not isinstance(self, str):
+            raise TypeError("unidentified type object in str")
+        if not isinstance(alf, str) and alf is not None:
+            raise TypeError("unidentified type object in alf")
         from .atbash_cipher import atbash_cipher_decryption
-        if alf == None:
+        if alf is None:
             return atbash_cipher_decryption(self, self._alf)
         else:
             return atbash_cipher_decryption(self, alf)
-

@@ -43,7 +43,8 @@ class TestCryptographerStr:
 
     # endregion
 
-    # region тестирование методов
+    # region тестирование декораторов
+    # region тестирование методов Атбаш
     def test_atbash_cipher_decryption_string(self, monkeypatch):
         # Создаем фиктивную функцию для имитации вызова
         def mock_atbash_cipher_decryption(input_str, alf):
@@ -72,35 +73,40 @@ class TestCryptographerStr:
         assert result == "mocked_result"
 
     def test_atbash_cipher_decryption_string_and_alf(self, monkeypatch):
-        # Создаем фиктивную функцию для имитации вызова
         def mock_atbash_cipher_decryption(input_str, alf):
             assert input_str == "hello"
             assert alf == "abcdefghijklmnopqrstuvwxyz"
             return "mocked_result"
 
-        # Используем pytest monkeypatch для замены реальной функции на фиктивную
         monkeypatch.setattr('CryptographerStr.atbash_cipher.atbash_cipher_decryption', mock_atbash_cipher_decryption)
 
         s = CryptographerStr("hello")
 
-        # Проверяем результат вызова метода
         result = s.atbash_cipher_decryption()
         assert result == "mocked_result"
 
     def test_atbash_cipher_decryption_alf(self, monkeypatch):
-        # Создаем фиктивную функцию для имитации вызова
         def mock_atbash_cipher_decryption(input_str, alf):
             assert input_str == "hello"
             assert alf == "abc"
             return "mocked_result"
 
-        # Используем pytest monkeypatch для замены реальной функции на фиктивную
         monkeypatch.setattr('CryptographerStr.atbash_cipher.atbash_cipher_decryption', mock_atbash_cipher_decryption)
 
         s = CryptographerStr("hello")
 
-        # Проверяем результат вызова метода
         result = s.atbash_cipher_decryption("abc")
         assert result == "mocked_result"
+
+    def test_atbash_cipher_decryption_raises_type_error_for_invalid_self(self):
+        non_str_instance = 123
+
+        with pytest.raises(TypeError, match="unidentified type object in str"):
+            CryptographerStr.atbash_cipher_decryption(non_str_instance)
+
+    def test_unidentified_object_in_alf(self):
+        with pytest.raises(TypeError, match="unidentified type object in alf"):
+            s = (CryptographerStr("hello")).atbash_cipher_decryption(123)
+    # endregion
 
     # endregion
