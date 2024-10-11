@@ -37,6 +37,10 @@ class TestCryptographerStr:
         s = CryptographerStr("HeLlO\nмИр!")
         assert s == "hello\nмир!"
 
+    def test_unidentified_object(self):
+        with pytest.raises(TypeError, match="unidentified type object"):
+            s = CryptographerStr([])
+
     # endregion
 
     # region тестирование методов
@@ -56,18 +60,14 @@ class TestCryptographerStr:
         assert result == "mocked_result"
 
     def test_atbash_cipher_decryption_empty_alf(self, monkeypatch):
-        # Создаем фиктивную функцию для имитации вызова
         def mock_atbash_cipher_decryption(input_str, alf):
-            assert input_str is not None
             assert alf == "abcdefghijklmnopqrstuvwxyz"
             return "mocked_result"
 
-        # Используем pytest monkeypatch для замены реальной функции на фиктивную
         monkeypatch.setattr('CryptographerStr.atbash_cipher.atbash_cipher_decryption', mock_atbash_cipher_decryption)
 
         s = CryptographerStr()
 
-        # Проверяем результат вызова метода
         result = s.atbash_cipher_decryption()
         assert result == "mocked_result"
 
