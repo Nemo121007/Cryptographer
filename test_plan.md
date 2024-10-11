@@ -78,6 +78,56 @@
 *Входные данные:* "HeLlO\nмИр!"
 
 *Ожидаемый результат:* "hello\nмир!"
+#### Тест М1.9: Создание класса из объекта неподходящего типа(test_unidentified_object)
+*Тип теста:* Негативный
+
+*Описание:* Проверка на ошибки при создании класса из объекта неподходящего типа
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr(str)}
+
+*Входные данные:* []
+
+*Ожидаемый результат:* TypeError("unidentified type object")
+#### Тест М1.10: Тестирование декоратора функции шифрования алгоритма Атбаш (передача текста)(test_atbash_cipher_decryption_string)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка декоратора функции шифрования алгоритма Атбаш
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.atbash_cipher_decryption(str, alf)}
+
+*Входные данные:* "hello"
+
+*Ожидаемый результат:* "hello"
+#### Тест М1.11: Тестирование декоратора функции шифрования алгоритма Атбаш (алфавит по умолчанию)(test_atbash_cipher_decryption_empty_alf)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка алфавита по умолчанию в декораторе функции шифрования алгоритма Атбаш
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.atbash_cipher_decryption(str, alf)}
+
+*Входные данные:* Отсутствуют
+
+*Ожидаемый результат:* alf == "abcdefghijklmnopqrstuvwxyz"
+#### Тест М1.12: Тестирование декоратора функции шифрования алгоритма Атбаш (передача теста + алфавит по умолчанию)(test_atbash_cipher_decryption_string_and_alf)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка передачи текста и алфавита по умолчанию в декораторе функции шифрования алгоритма Атбаш
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.atbash_cipher_decryption(str, alf)}
+
+*Входные данные:* "hello"
+
+*Ожидаемый результат:* "hello", alf = "abcdefghijklmnopqrstuvwxyz"
+#### Тест М1.13: Тестирование декоратора функции шифрования алгоритма Атбаш (передача теста и алфавита) (test_atbash_cipher_decryption_alf)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка передачи теста и алфавита в декораторе функции шифрования алгоритма Атбаш
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.atbash_cipher_decryption(str, alf)}
+
+*Входные данные:* "hello", alf = "abc"
+
+*Ожидаемый результат:* "hello", alf = "abc"
 #### Тест М1.1: 
 *Тип теста:* Позитивный
 
