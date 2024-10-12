@@ -31,3 +31,29 @@ class CryptographerStr(str):
             return cesar_cipher_decryption(self, step, self._alf)
         else:
             return cesar_cipher_decryption(self, step, alf)
+
+    def vigenere_cipher_encryption(self, key, alf=None):
+        if not isinstance(self, str):
+            raise TypeError("unidentified type object in str")
+        if not isinstance(key, str):
+            raise TypeError("unidentified type object in key")
+        if not isinstance(alf, str) and alf is not None:
+            raise TypeError("unidentified type object in alf")
+        from .vigenere_cipher import vigenere_cipher_encryption
+        if alf is None:
+            return vigenere_cipher_encryption(self, key, self._alf)
+        else:
+            return vigenere_cipher_encryption(self, key, alf)
+
+    def vigenere_cipher_decryption(self, key, alf=None):
+        if not isinstance(self, str):
+            raise TypeError("unidentified type object in str")
+        if not isinstance(key, str):
+            raise TypeError("unidentified type object in key")
+        if not isinstance(alf, str) and alf is not None:
+            raise TypeError("unidentified type object in alf")
+        from .vigenere_cipher import vigenere_cipher_decryption
+        if alf is None:
+            return vigenere_cipher_decryption(self, key, self._alf)
+        else:
+            return vigenere_cipher_decryption(self, key, alf)
