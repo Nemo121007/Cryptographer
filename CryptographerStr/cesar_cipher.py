@@ -1,3 +1,4 @@
+from CryptographerStr import CryptographerStr
 def cesar_cipher_decryption(text, step, alf):
     decrypted_text = ""
     for char in text:
@@ -7,5 +8,5 @@ def cesar_cipher_decryption(text, step, alf):
             decrypted_text += alf[new_idx]
         else:
             decrypted_text += char
-    return decrypted_text
+    return CryptographerStr(decrypted_text)
 

@@ -1,7 +1,6 @@
 import pytest
 from CryptographerStr.cesar_cipher import cesar_cipher_decryption
 
-
 class TestCesarCipherDecryption:
     def test_encryption(self):
         cipher = "hello"
@@ -83,26 +82,26 @@ class TestCesarCipherDecryption:
         assert result == "hello world"
 
     def test_encryption_missing_characters(self):
-        cipher = "Hello, world!"
+        cipher = "hello, world!"
         step = 1
         alf = "abcdefghijklmnopqrstuvwxyz"
         result = cesar_cipher_decryption(cipher, step, alf)
-        assert result == "Hfmmp, xpsme!"
+        assert result == "ifmmp, xpsme!"
 
     def test_decryption_missing_characters(self):
-        cipher = "Hfmmp, xpsme!"
+        cipher = "ifmmp, xpsme!"
         step = -1
         alf = "abcdefghijklmnopqrstuvwxyz"
         result = cesar_cipher_decryption(cipher, step, alf)
-        assert result == "Hello, world!"
+        assert result == "hello, world!"
 
     def test_encryption_decryption_missing_characters(self):
-        cipher = "Hello, world!"
+        cipher = "hello, world!"
         step = 1
         alf = "abcdefghijklmnopqrstuvwxyz"
         result = cesar_cipher_decryption(cipher, step, alf)
         result = cesar_cipher_decryption(result, -step, alf)
-        assert result == "Hello, world!"
+        assert result == "hello, world!"
 
     def test_equal_step(self):
         cipher = "Hello, world!"

@@ -1,3 +1,4 @@
+from CryptographerStr import CryptographerStr
 def atbash_cipher_decryption(self, alf):
     result = ""
     for char in self:
@@ -6,7 +7,7 @@ def atbash_cipher_decryption(self, alf):
             result += alf[len(alf) - index - 1]
         else:
             result += char  # Если символ не найден в алфавите, добавляем его как есть
-    return result
+    return CryptographerStr(result)
 
 
 if __name__ == "__main__":

@@ -1,12 +1,6 @@
+from CryptographerStr import CryptographerStr
 def vigenere_cipher_encryption(self, key, alf):
-    if key == "":
-        raise ValueError("Empty key")
-    for symbol in self:
-        if not (symbol in alf):
-            raise ValueError("Symbol in string is missing from the alphabet")
-    for symbol in key:
-        if not (symbol in alf):
-            raise ValueError("Symbol in key is missing from the alphabet")
+    _check_arguments(self, key, alf)
 
     line = ""
 
@@ -28,18 +22,11 @@ def vigenere_cipher_encryption(self, key, alf):
                         break
                 break
 
-    return line
+    return CryptographerStr(line)
 
 
 def vigenere_cipher_decryption(self, key, alf):
-    if key == "":
-        raise ValueError("Empty key")
-    for symbol in self:
-        if not(symbol in alf):
-            raise ValueError("Symbol in string is missing from the alphabet")
-    for symbol in key:
-        if not (symbol in alf):
-            raise ValueError("Symbol in key is missing from the alphabet")
+    _check_arguments(self, key, alf)
 
     line = ""
 
@@ -61,4 +48,14 @@ def vigenere_cipher_decryption(self, key, alf):
                         break
                 break
 
-    return line
+    return CryptographerStr(line)
+
+def _check_arguments(str, key, alf):
+    if key == "":
+        raise ValueError("Empty key")
+    for symbol in str:
+        if not (symbol in alf):
+            raise ValueError("Symbol in string is missing from the alphabet")
+    for symbol in key:
+        if not (symbol in alf):
+            raise ValueError("Symbol in key is missing from the alphabet")
