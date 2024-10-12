@@ -238,6 +238,107 @@
 *Входные данные:* "hello", step = 1, alf=123
 
 *Ожидаемый результат:* TypeError("unidentified type object in alf")
+#### Тест М1.25: Тестирование метода вызова алгоритма шифрования Вижинера на передачу аргументов(строка, ключ и алфавит)(test_vigenere_cipher_encryption_string_key_alf)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка метода вызова алгоритма шифрования Вижинера на передачу аргументов(строка, ключ и алфавит)
+
+*Метод:* CryptographerStr/CryptographerStr.py{vigenere_cipher_encryption(str, key, alf)}
+
+*Входные данные:* (self=CryptographerStr("hello"), key="world", alf="abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* (self == "hello", assert key == "world", assert alf == "abcdefghijklmnopqrstuvwxyz")
+#### Тест М1.26: Тестирование метода вызова алгоритма шифрования Вижинера на передачу аргументов(строка и ключ)(test_vigenere_cipher_encryption_string_key_empty_alf)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка метода вызова алгоритма шифрования Вижинера на передачу аргументов(строка и ключ)
+
+*Метод:* CryptographerStr/CryptographerStr.py{vigenere_cipher_encryption(str, key, alf)}
+
+*Входные данные:* (self=CryptographerStr("hello"), key="world")
+
+*Ожидаемый результат:* (self == "hello", assert key == "world", assert alf == "abcdefghijklmnopqrstuvwxyz")
+#### Тест М1.27: Тестирование метода вызова алгоритма шифрования Вижинера на некорректном объекте(test_vigenere_cipher_encryption_invalid_self)
+*Тип теста:* Негативный
+
+*Описание:* Проверка метода вызова алгоритма шифрования Вижинера на некорректном объекте
+
+*Метод:* CryptographerStr/CryptographerStr.py{vigenere_cipher_encryption(str, key, alf)}
+
+*Входные данные:* (self=123, key="world")
+
+*Ожидаемый результат:* TypeError("unidentified type object in str")
+#### Тест М1.28: Тестирование метода вызова алгоритма шифрования Вижинера с некорректным ключом(test_vigenere_cipher_encryption_invalide_key)
+*Тип теста:* Негативный
+
+*Описание:* Проверка метода вызова алгоритма шифрования Вижинера с некорректным ключом
+
+*Метод:* CryptographerStr/CryptographerStr.py{vigenere_cipher_encryption(str, key, alf)}
+
+*Входные данные:* (self="hello", key=123)
+
+*Ожидаемый результат:* TypeError("unidentified type object in key")
+#### Тест М1.29: Тестирование метода вызова алгоритма шифрования Вижинера с некорректным алфавитом(test_vigenere_cipher_encryption_invalide_alf)
+*Тип теста:* Негативный
+
+*Описание:* Проверка метода вызова алгоритма шифрования Вижинера с некорректным алфавитом
+
+*Метод:* CryptographerStr/CryptographerStr.py{vigenere_cipher_encryption(str, key, alf)}
+
+*Входные данные:* (self="hello", key="world", alf=123)
+
+*Ожидаемый результат:* TypeError("unidentified type object in alf")
+#### Тест М1.30: Тестирование метода вызова алгоритма дешифрования Вижинера на передачу аргументов(строка, ключ и алфавит)(test_vigenere_cipher_decryption_string_key_alf)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка метода вызова алгоритма дешифрования Вижинера на передачу аргументов(строка, ключ и алфавит)
+
+*Метод:* CryptographerStr/CryptographerStr.py{vigenere_cipher_decryption(str, key, alf)}
+
+*Входные данные:* (self=CryptographerStr("hello"), key="world", alf="abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* (self == "hello", assert key == "world", assert alf == "abcdefghijklmnopqrstuvwxyz")
+#### Тест М1.31: Тестирование метода вызова алгоритма дешифрования Вижинера на передачу аргументов(строка и ключ)(test_vigenere_cipher_decryption_string_key_empty_alf)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка метода вызова алгоритма дешифрования Вижинера на передачу аргументов(строка и ключ)
+
+*Метод:* CryptographerStr/CryptographerStr.py{vigenere_cipher_decryption(str, key, alf)}
+
+*Входные данные:* (self=CryptographerStr("hello"), key="world")
+
+*Ожидаемый результат:* (self == "hello", assert key == "world", assert alf == "abcdefghijklmnopqrstuvwxyz")
+#### Тест М1.32: Тестирование метода вызова алгоритма дешифрования Вижинера на некорректном объекте(test_vigenere_cipher_decryption_invalid_self)
+*Тип теста:* Негативный
+
+*Описание:* Проверка метода вызова алгоритма дешифрования Вижинера на некорректном объекте
+
+*Метод:* CryptographerStr/CryptographerStr.py{vigenere_cipher_decryption(str, key, alf)}
+
+*Входные данные:* (self=123, key="world")
+
+*Ожидаемый результат:* TypeError("unidentified type object in str")
+#### Тест М1.33: Тестирование метода вызова алгоритма дешифрования Вижинера с некорректным ключом(test_vigenere_cipher_decryption_invalide_key)
+*Тип теста:* Негативный
+
+*Описание:* Проверка метода вызова алгоритма дешифрования Вижинера с некорректным ключом
+
+*Метод:* CryptographerStr/CryptographerStr.py{vigenere_cipher_decryption(str, key, alf)}
+
+*Входные данные:* (self="hello", key=123)
+
+*Ожидаемый результат:* TypeError("unidentified type object in key")
+#### Тест М1.34: Тестирование метода вызова алгоритма дешифрования Вижинера с некорректным алфавитом(test_vigenere_cipher_decryption_invalide_alf)
+*Тип теста:* Негативный
+
+*Описание:* Проверка метода вызова алгоритма шифрования Вижинера с некорректным алфавитом
+
+*Метод:* CryptographerStr/CryptographerStr.py{vigenere_cipher_decryption(str, key, alf)}
+
+*Входные данные:* (self="hello", key="world", alf=123)
+
+*Ожидаемый результат:* TypeError("unidentified type object in alf")
+
 #### Тест М1.1: 
 *Тип теста:* Позитивный
 
@@ -248,6 +349,7 @@
 *Входные данные:* 
 
 *Ожидаемый результат:* 
+
 
 # Описание принципов тестирования алгоритмов
 Принципы тестирования, применяемые для алгоритмов шифрования, реализованных в данном проекте:
@@ -824,3 +926,97 @@
 **Входные данные:** (cipher = "hello", key = "", alf = "abcdefghijklmnopqrstuvwxyz")
 
 **Ожидаемый результат:** ValueError("Empty key")
+
+# Интеграционные тесты
+#### Тест I1.1: Тестирование шифрования алгоритма Атбаш(test_atbash_cipher_decryption)
+*Тип теста:* Позитивный
+
+*Описание:* Создание экземпляра CryptographerStr на основе строки и вызов из него метода шифрования алгоритма Атбаш
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.atbash_cipher_decryption(str, alf)}
+
+*Входные данные:* "hello"
+
+*Ожидаемый результат:* "svool"
+#### Тест I1.2: Тестирование шифрования и дешифрования алгоритма Атбаш(test_atbash_cipher_encryption_decryption)
+*Тип теста:* Позитивный
+
+*Описание:* Создание экземпляра CryptographerStr на основе строки, вызов из него метода шифрования алгоритма Атбаш и вызов метода для дешифровки зашифрованного объекта с тем же ключом
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.atbash_cipher_decryption(str, alf)}
+
+*Входные данные:* "hello"
+
+*Ожидаемый результат:* "hello"
+#### Тест I1.3: Тестирование шифрования алгоритма Цезаря(test_cesar_cipher_decryption)
+*Тип теста:* Позитивный
+
+*Описание:* Создание экземпляра CryptographerStr на основе строки и вызов из него метода шифрования алгоритма Цезаря
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.cesar_cipher_decryption(str, alf)}
+
+*Входные данные:* (str="hello", step=1)
+
+*Ожидаемый результат:* "ifmmp"
+#### Тест I1.4: Тестирование шифрования и дешифрования алгоритма Цезаря(test_cesar_cipher_encryption_decryption)
+*Тип теста:* Позитивный
+
+*Описание:* Создание экземпляра CryptographerStr на основе строки, вызов из него метода шифрования алгоритма Цезаря и вызов метода для дешифровки зашифрованного объекта с обратным ключом
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.cesar_cipher_decryption(str, alf)}
+
+*Входные данные:* (str="hello", step=1)
+                  (result_str, step=-1)
+
+*Ожидаемый результат:* "hello"
+#### Тест I1.5: Тестирование шифрования алгоритма Вижинера(test_vigenere_cipher_encryption)
+*Тип теста:* Позитивный
+
+*Описание:* Создание экземпляра CryptographerStr на основе строки и вызов из него метода шифрования алгоритма Вижинера
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.vigenere_cipher_encryption(str, key)}
+
+*Входные данные:* (str=""hello", key="world)
+
+*Ожидаемый результат:* "dscwr"
+#### Тест I1.6: Тестирование ошибок шифрования алгоритма Вижинера(ошибки, обрабатываемые непосредственно алгоритмом)(test_vigenere_cipher_encryption_deep_error)
+*Тип теста:* Позитивный
+
+*Описание:* Создание экземпляра CryptographerStr на основе строки и вызов из него метода шифрования алгоритма Вижинера с пустой строкой
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.vigenere_cipher_encryption(str, key)}
+
+*Входные данные:* (str=""hello", key="")
+
+*Ожидаемый результат:* ValueError(match="Empty key")
+#### Тест I1.7: Тестирование дешифрования алгоритма Вижинера(test_vigenere_cipher_decryption)
+*Тип теста:* Позитивный
+
+*Описание:* Создание экземпляра CryptographerStr на основе строки и вызов из него метода дешифрования алгоритма Вижинера
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.vigenere_cipher_decryption(str, key)}
+
+*Входные данные:* (str=""hello", key="world")
+
+*Ожидаемый результат:* "lqual"
+#### Тест I1.6: Тестирование ошибок дешифрования алгоритма Вижинера(ошибки, обрабатываемые непосредственно алгоритмом)(test_vigenere_cipher_decryption_deep_error)
+*Тип теста:* Позитивный
+
+*Описание:* Создание экземпляра CryptographerStr на основе строки и вызов из него метода дешифрования алгоритма Вижинера с пустой строкой
+
+*Метод:* CryptographerStr/CryptographerStr.py{CryptographerStr.vigenere_cipher_decryption(str, key)}
+
+*Входные данные:* (str=""hello", key="")
+
+*Ожидаемый результат:* ValueError(match="Empty key")
+#### Тест I1.7: Тестирование шифрования и дешифрования алгоритма Вижинера(test_vigenere_cipher_encryption_decryption)
+*Тип теста:* Позитивный
+
+*Описание:* Создание экземпляра CryptographerStr на основе строки, вызов из него метода шифрования алгоритма Вижинера и вызов метода дешифрования алгоритма Вижинера из итогового объекта(ключи одинаковы)
+
+*Методы:* CryptographerStr/CryptographerStr.py{CryptographerStr.vigenere_cipher_encryption(str, key)}
+          CryptographerStr/CryptographerStr.py{CryptographerStr.vigenere_cipher_decryption(str, key)}
+
+*Входные данные:* (str=""hello", key="world")
+
+*Ожидаемый результат:* "hello"

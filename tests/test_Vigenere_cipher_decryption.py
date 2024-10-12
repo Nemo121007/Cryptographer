@@ -1,7 +1,6 @@
 import pytest
 from CryptographerStr.vigenere_cipher import vigenere_cipher_decryption, vigenere_cipher_encryption
 
-
 class TestVigenereCipherDecryption:
     def test_encryption(self):
         cipher = "hello"
@@ -132,7 +131,7 @@ class TestVigenereCipherDecryption:
 
     def test_decryption_missing_characters(self):
         with pytest.raises(ValueError, match="Symbol in string is missing from the alphabet"):
-            s = vigenere_cipher_encryption("hello!>", "world","hijklmno")
+            s = vigenere_cipher_decryption("hello!>", "world","hijklmno")
 
     def test_encryption_missing_characters_in_key(self):
         with pytest.raises(ValueError, match="Symbol in key is missing from the alphabet"):

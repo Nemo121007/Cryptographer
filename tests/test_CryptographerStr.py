@@ -1,7 +1,6 @@
 import pytest
 from CryptographerStr import CryptographerStr
 
-
 class TestCryptographerStr:
     # region Тестирование конструктора
     def test_create_cryptographer_str(self):
@@ -198,38 +197,30 @@ class TestCryptographerStr:
     # region Шифр Вижинера
     # region Шифрование
     def test_vigenere_cipher_encryption_string_key_alf(self, monkeypatch):
-        # Создаем фиктивную функцию для имитации вызова
         def mock_vigenere_cipher_encryption(input_str, key, alf):
             assert input_str == "hello"
             assert key == "world"
             assert alf == "abcdefghijklmnopqrstuvwxyz"
             return "mocked_result"
 
-        # Используем pytest monkeypatch для замены реальной функции на фиктивную
         monkeypatch.setattr('CryptographerStr.vigenere_cipher.vigenere_cipher_encryption',
                             mock_vigenere_cipher_encryption)
 
         s = CryptographerStr("hello")
-
-        # Проверяем результат вызова метода
         result = s.vigenere_cipher_encryption("world", "abcdefghijklmnopqrstuvwxyz")
         assert result == "mocked_result"
 
     def test_vigenere_cipher_encryption_string_key_empty_alf(self, monkeypatch):
-        # Создаем фиктивную функцию для имитации вызова
         def mock_vigenere_cipher_encryption(input_str, key, alf):
             assert input_str == "hello"
             assert key == "world"
             assert alf == "abcdefghijklmnopqrstuvwxyz"
             return "mocked_result"
 
-        # Используем pytest monkeypatch для замены реальной функции на фиктивную
         monkeypatch.setattr('CryptographerStr.vigenere_cipher.vigenere_cipher_encryption',
                             mock_vigenere_cipher_encryption)
 
         s = CryptographerStr("hello")
-
-        # Проверяем результат вызова метода
         result = s.vigenere_cipher_encryption("world")
         assert result == "mocked_result"
 
@@ -241,11 +232,11 @@ class TestCryptographerStr:
 
     def test_vigenere_cipher_encryption_invalide_key(self):
         with pytest.raises(TypeError, match="unidentified type object in key"):
-            s = (CryptographerStr("hello")).vigenere_cipher_encryption([])
+            s = (CryptographerStr("hello")).vigenere_cipher_encryption(123)
 
     def test_vigenere_cipher_encryption_invalide_alf(self):
         with pytest.raises(TypeError, match="unidentified type object in alf"):
-            s = (CryptographerStr("hello")).vigenere_cipher_encryption("world", [])
+            s = (CryptographerStr("hello")).vigenere_cipher_encryption("world", 123)
     # endregion
 
     # region Дешифрование

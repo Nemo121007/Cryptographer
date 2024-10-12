@@ -1,26 +1,25 @@
 import pytest
 from CryptographerStr.atbash_cipher import atbash_cipher_decryption
 
-
 class TestAtbashCipherDecryption:
     def test_encryption(self):
-        cipher = "Hello"
+        cipher = "hello"
         alf = "abcdefghijklmnopqrstuvwxyz"
         result = atbash_cipher_decryption(cipher, alf)
-        assert result == "Hvool"
+        assert result == "svool"
 
     def test_decryption(self):
-        cipher = "Hvool"
+        cipher = "svool"
         alf = "abcdefghijklmnopqrstuvwxyz"
         result = atbash_cipher_decryption(cipher, alf)
-        assert result == "Hello"
+        assert result == "hello"
 
     def test_decryption_encryption(self):
-        cipher = "Hello"
+        cipher = "hello"
         alf = "abcdefghijklmnopqrstuvwxyz"
         result = atbash_cipher_decryption(cipher, alf)
         result = atbash_cipher_decryption(result, alf)
-        assert result == "Hello"
+        assert result == "hello"
 
     def test_empty_string(self):
         cipher = ""
@@ -29,23 +28,23 @@ class TestAtbashCipherDecryption:
         assert result == ""
 
     def test_encryption_string(self):
-        cipher = "Hello world"
+        cipher = "hello world"
         alf = "abcdefghijklmnopqrstuvwxyz"
         result = atbash_cipher_decryption(cipher, alf)
-        assert result == "Hvool dliow"
+        assert result == "svool dliow"
 
     def test_decryption_string(self):
-        cipher = "Hvool dliow"
+        cipher = "svool dliow"
         alf = "abcdefghijklmnopqrstuvwxyz"
         result = atbash_cipher_decryption(cipher, alf)
-        assert result == "Hello world"
+        assert result == "hello world"
 
     def test_encryption_decryption_string(self):
-        cipher = "Hello world"
+        cipher = "hello world"
         alf = "abcdefghijklmnopqrstuvwxyz"
         result = atbash_cipher_decryption(cipher, alf)
         result = atbash_cipher_decryption(result, alf)
-        assert result == "Hello world"
+        assert result == "hello world"
 
     def test_encryption_one_char_1(self):
         cipher = "a"
@@ -73,20 +72,20 @@ class TestAtbashCipherDecryption:
         assert result == "m"
 
     def test_encryption_missing_characters(self):
-        cipher = "Hello, world!"
+        cipher = "hello, world!"
         alf = "abcdefghijklmnopqrstuvwxyz"
         result = atbash_cipher_decryption(cipher, alf)
-        assert result == "Hvool, dliow!"
+        assert result == "svool, dliow!"
 
     def test_decryption_missing_characters(self):
-        cipher = "Hvool, dliow!"
+        cipher = "svool, dliow!"
         alf = "abcdefghijklmnopqrstuvwxyz"
         result = atbash_cipher_decryption(cipher, alf)
-        assert result == "Hello, world!"
+        assert result == "hello, world!"
 
     def test_encryption_decryption_missing_characters(self):
-        cipher = "Hello, world!"
+        cipher = "hello, world!"
         alf = "abcdefghijklmnopqrstuvwxyz"
         result = atbash_cipher_decryption(cipher, alf)
         result = atbash_cipher_decryption(result, alf)
-        assert result == "Hello, world!"
+        assert result == "hello, world!"
