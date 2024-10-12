@@ -103,3 +103,39 @@ class TestCesarCipherDecryption:
         result = cesar_cipher_decryption(cipher, step, alf)
         result = cesar_cipher_decryption(result, -step, alf)
         assert result == "Hello, world!"
+
+    def test_equal_step(self):
+        cipher = "Hello, world!"
+        step_1 = 1
+        step_2 = 1
+        alf = "abcdefghijklmnopqrstuvwxyz"
+        result_1 = cesar_cipher_decryption(cipher, step_1, alf)
+        result_2 = cesar_cipher_decryption(cipher, step_2, alf)
+        assert result_1 == result_2
+
+    def test_equal_step_different_string(self):
+        cipher_1 = "Hello, world!"
+        cipher_2 = "Hello!"
+        step = 1
+        alf = "abcdefghijklmnopqrstuvwxyz"
+        result_1 = cesar_cipher_decryption(cipher_1, step, alf)
+        result_2 = cesar_cipher_decryption(cipher_2, step, alf)
+        assert result_1 != result_2
+
+    def test_equal_step_different_alf(self):
+        cipher = "Hello, world!"
+        step = 1
+        alf_1 = "abcdefghijklmnopqrstuvwxyz"
+        alf_2 = "efghijklmnopqrstuvwxyz"
+        result_1 = cesar_cipher_decryption(cipher, step, alf_1)
+        result_2 = cesar_cipher_decryption(cipher, step, alf_2)
+        assert result_1 != result_2
+
+    def test_diffenert_step(self):
+        cipher = "Hello, world!"
+        step_1 = 1
+        step_2 = 2
+        alf = "abcdefghijklmnopqrstuvwxyz"
+        result_1 = cesar_cipher_decryption(cipher, step_1, alf)
+        result_2 = cesar_cipher_decryption(cipher, step_2, alf)
+        assert result_1 != result_2

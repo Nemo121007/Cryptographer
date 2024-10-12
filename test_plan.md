@@ -466,10 +466,10 @@
 *Входные данные:* (cipher = "ifmmp", step = -1, alf = "abcdefghijklmnopqrstuvwxyz")
 
 *Ожидаемый результат:* "hello"
-#### Тест М3.7: Дешифрование зашифрованной строки (test_encryption_decryption)
+#### Тест М3.7: Дешифрование пустой строки (test_encryption_decryption)
 *Тип теста:* Позитивный
 
-*Описание:* Проверка корректности дешифрования зашифрованной строки
+*Описание:* Проверка корректности дешифрования пустой строки
 
 *Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
 
@@ -546,3 +546,281 @@
 **Входные данные:** (cipher = "Hello, world!", step = 1, alf = "abcdefghijklmnopqrstuvwxyz")
 
 **Ожидаемый результат:** "Hello, world!"
+#### Тест М3.15: Шифрование одинаковых строк с одинаковым шагом(test_equal_step)
+**Тип теста:** Позитивный
+
+**Описание:** Проверка на то, что при шифровании одинаковых строк с одинаковым шагом возвращаются одинаковые результаты
+
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
+
+**Входные данные:** (cipher = "Hello, world!", step_1 = 1, alf = "abcdefghijklmnopqrstuvwxyz")
+                    (cipher = "Hello, world!", step_2 = 1, alf = "abcdefghijklmnopqrstuvwxyz")
+
+**Ожидаемый результат:** result_1 == result_2
+#### Тест М3.16: Шифрование разных строк с одинаковым шагом(test_equal_step_different_string)
+**Тип теста:** Негативный
+
+**Описание:** Проверка на то, что при шифровании разных строк с одинаковым шагом возвращаются разные результаты
+
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
+
+**Входные данные:** (cipher_1 = "Hello, world!", step = 1, alf = "abcdefghijklmnopqrstuvwxyz")
+                    (cipher_2 = "Hello!", step = 1, alf = "abcdefghijklmnopqrstuvwxyz")
+
+**Ожидаемый результат:** result_1 != result_2
+#### Тест М3.17: Шифрование одинаковых строк с разным алфавитом(test_equal_step_different_alf)
+**Тип теста:** Негативный
+
+**Описание:** Проверка на то, что при шифровании одинаковых строк с разным алфавитом возвращаются разные результаты
+
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
+
+**Входные данные:** (cipher = "Hello, world!", step = 1, alf = "abcdefghijklmnopqrstuvwxyz")
+                    (cipher = "Hello, world!", step = 1, alf = "efghijklmnopqrstuvwxyz")
+
+**Ожидаемый результат:** result_1 != result_2
+#### Тест М3.18: Шифрование строк с разным шагом(test_diffenert_step)
+**Тип теста:** Негативный
+
+**Описание:** Проверка на то, что при шифровании строк с разным шагом возвращаются разные результаты
+
+*Метод:* CryptographerStr/cesar_cipher.py{cesar_cipher_decryption(cipher, step, alf)}
+
+**Входные данные:** (cipher = "Hello, world!", step_1 = 1, alf = "abcdefghijklmnopqrstuvwxyz")
+                    (cipher = "Hello, world!", step_2 = 2, alf = "abcdefghijklmnopqrstuvwxyz")
+
+**Ожидаемый результат:** result_1 != result_2
+### Шифр Вижинера
+#### Тест М4.1: Шифрование строки (test_encryption)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности шифрования строки
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_encryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "hello", key = "world", alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* "dscwr"
+#### Тест М4.2: Дешифрование строки (test_decryption)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности дешифрования строки
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "dscwr", key = "world", alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* "hello"
+#### Тест М4.3: Дешифрование строки с неправильным ключом(test_decryption_invalide_key)
+*Тип теста:* Негативный
+
+*Описание:* Проверка на дешифрование с неправильным ключом
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "dscwr", key = "word", alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* result != "hello"
+#### Тест М4.4: Дешифрование зашифрованной строки(test_decryption_encryption)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности дешифрования зашифрованной строки
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_encryption(cipher, step, alf)} 
+         CryptographerStr/vigenere_cipher.py{vigenere_cipher_decryption(encryption_string, step, alf)}
+
+*Входные данные:* (cipher = "hello", key = "world", alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* "hello"
+#### Тест М4.5: Шифрование пустой строки (test_encryption_decryption)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности шифрования зашифрованной строки
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_encryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "", key = "world", alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* ""
+#### Тест М4.6: Дешифрование пустой строки (test_encryption_decryption)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности дешифрования зашифрованной строки
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "", key = "world", alf = "abcdefghijklmnopqrstuvwxyz")
+
+*Ожидаемый результат:* ""
+#### Тест М4.7: Шифрование строки из нескольких слов(test_encryption_string)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности шифрования строки из нескольких слов
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_encryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "hello world", key = "world", alf = "abcdefghijklmnopqrstuvwxyz ")
+
+*Ожидаемый результат:* "csbwrvjeboz"
+#### Тест М4.8: Дешифрование строки из нескольких слов(test_decryption_string)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности дешифрования строки из нескольких слов
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "csbwrvjeboz", key = "world", alf = "abcdefghijklmnopqrstuvwxyz ")
+
+*Ожидаемый результат:* "hello world"
+#### Тест М4.9: Шифрование и дешифрование строки (test_encryption_decryption_string)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности дешифрования зашифрованной строки
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_encryption(cipher, step, alf)}
+         CryptographerStr/vigenere_cipher.py{vigenere_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "hello world", key = "world", alf = "abcdefghijklmnopqrstuvwxyz ")
+
+*Ожидаемый результат:* "hello world"
+#### Тест М4.10: Шифрование строки, состоящей из одного символа(test_encryption_one_symbol)
+**Тип теста:** Позитивный
+
+**Описание:** Проверка корректности шифрования строки, состоящей из одного символа
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_encryption(cipher, step, alf)}
+
+**Входные данные:** (cipher = "a", key = "world", alf = "abcdefghijklmnopqrstuvwxyz")
+
+**Ожидаемый результат:** "w"
+#### Тест М4.10: Дешифрование строки, состоящей из одного символа(test_decryption_one_symbol)
+**Тип теста:** Позитивный
+
+**Описание:** Проверка корректности дешифрования строки, состоящей из одного символа
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_decryption(cipher, step, alf)}
+
+**Входные данные:** (cipher = "w", key = "world", alf = "abcdefghijklmnopqrstuvwxyz")
+
+**Ожидаемый результат:** "a"
+#### Тест М4.11: Шифрование и дешифрование строки, состоящей из одного символа(test_encryption_decryption_one_symbol)
+*Тип теста:* Позитивный
+
+*Описание:* Проверка корректности дешифрования зашифрованной строки
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_encryption(cipher, step, alf)}
+         CryptographerStr/vigenere_cipher.py{vigenere_cipher_decryption(cipher, step, alf)}
+
+*Входные данные:* (cipher = "a", key = "world", alf = "abcdefghijklmnopqrstuvwxyz ")
+
+*Ожидаемый результат:* "a"
+#### Тест М4.12: Шифрование строки разными ключами(test_encryption_different_keys)
+**Тип теста:** Негативный
+
+**Описание:** Проверка совпадения одинаковой строки, зашифрованной разными ключами
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_encryption(cipher, step, alf)}
+
+**Входные данные:** (cipher = "hello", key_1 = "world", alf = "abcdefghijklmnopqrstuvwxyz")
+                    (cipher = "hello", key_2 = "word", alf = "abcdefghijklmnopqrstuvwxyz")
+**Ожидаемый результат:** result_1 != result_2
+#### Тест М4.12: Шифрование строки разными ключами(test_encryption_different_keys)
+**Тип теста:** Негативный
+
+**Описание:** Проверка совпадения одинаковой строки, зашифрованной разными ключами
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_encryption(cipher, step, alf)}
+
+**Входные данные:** (cipher = "hello", key_1 = "world", alf = "abcdefghijklmnopqrstuvwxyz")
+                    (cipher = "hello", key_2 = "word", alf = "abcdefghijklmnopqrstuvwxyz")
+**Ожидаемый результат:** result_1 != result_2
+#### Тест М4.13: Дешифрование строки разными ключами(test_decryption_different_keys)
+**Тип теста:** Негативный
+
+**Описание:** Проверка совпадения одинаковой строки, дешифрованной разными ключами
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_decryption(cipher, step, alf)}
+
+**Входные данные:** (cipher = "hello", key_1 = "world", alf = "abcdefghijklmnopqrstuvwxyz")
+                    (cipher = "hello", key_2 = "word", alf = "abcdefghijklmnopqrstuvwxyz")
+**Ожидаемый результат:** result_1 != result_2
+#### Тест М4.14: Шифрование строки одинаковыми ключами(test_encryption_string_equal_key)
+**Тип теста:** Позитивный
+
+**Описание:** Проверка совпадения одинаковой строки, зашифрованной одинаковыми ключами
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_encryption(cipher, step, alf)}
+
+**Входные данные:** (cipher = "hello", key_1 = "world", alf = "abcdefghijklmnopqrstuvwxyz")
+                    (cipher = "hello", key_2 = "world", alf = "abcdefghijklmnopqrstuvwxyz")
+**Ожидаемый результат:** result_1 == result_2
+#### Тест М4.15: Дешифрование строки одинаковыми ключами(test_decryption_string_equal_key)
+**Тип теста:** Позитивный
+
+**Описание:** Проверка совпадения одинаковой строки, дешифрованной одинаковыми ключами
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_decryption(cipher, step, alf)}
+
+**Входные данные:** (cipher = "rbhwg", key_1 = "world", alf = "abcdefghijklmnopqrstuvwxyz")
+                    (cipher = "rbhwg", key_2 = "world", alf = "abcdefghijklmnopqrstuvwxyz")
+**Ожидаемый результат:** result_1 == result_2
+#### Тест М4.16: Шифрование строки, содержащей символы, отсутствующие в алфавите(test_encryption_missing_characters)
+**Тип теста:** Негативный
+
+**Описание:** Попытка шифрования строки, содержащей символы, отсутствующие в алфавите
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_encryption(cipher, step, alf)}
+
+**Входные данные:** (cipher = "hello!>", key = "world", alf = "hijklmno")
+
+**Ожидаемый результат:** ValueError("Symbol is missing from the alphabet")
+#### Тест М4.17: Шифрование строки с помощью ключа, содержащего символы, отсутствующие в алфавите(test_encryption_missing_characters_in_key)
+**Тип теста:** Негативный
+
+**Описание:** Попытка шифрования строки с помощью ключа, содержащего символы, отсутствующие в алфавите
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_encryption(cipher, step, alf)}
+
+**Входные данные:** (cipher = "hl", key = "world", alf = "hijklmno")
+
+**Ожидаемый результат:** ValueError("Symbol in key is missing from the alphabet")
+#### Тест М4.18: Дешифрование строки, содержащей символы, отсутствующие в алфавите(test_decryption_missing_characters)
+**Тип теста:** Негативный
+
+**Описание:** Попытка дешифрования строки, содержащей символы, отсутствующие в алфавите
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_decryption(cipher, step, alf)}
+
+**Входные данные:** (cipher = "hello!>", key = "world", alf = "hijklmno")
+
+**Ожидаемый результат:** ValueError("Symbol is missing from the alphabet")
+#### Тест М4.19: Дешифрование строки с помощью ключа, содержащего символы, отсутствующие в алфавите(test_decryption_missing_characters_in_key)
+**Тип теста:** Негативный
+
+**Описание:** Попытка дешифрования строки с помощью ключа, содержащего символы, отсутствующие в алфавите
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_decryption(cipher, step, alf)}
+
+**Входные данные:** (cipher = "hl", key = "world", alf = "hijklmno")
+
+**Ожидаемый результат:** ValueError("Symbol in key is missing from the alphabet")
+#### Тест М4.20: Шифрование строки пустой строкой(test_encryption_empty_key)
+**Тип теста:** Негативный
+
+**Описание:** Попытка шифрования строки пустой строкой
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_encryption(cipher, step, alf)}
+
+**Входные данные:** (cipher = "hello", key = "", alf = "abcdefghijklmnopqrstuvwxyz")
+
+**Ожидаемый результат:** ValueError("Empty key")
+#### Тест М4.21: Дешифрование строки пустой строкой(test_decryption_empty_key)
+**Тип теста:** Негативный
+
+**Описание:** Попытка дешифрования строки пустой строкой
+
+*Метод:* CryptographerStr/vigenere_cipher.py{vigenere_cipher_decryption(cipher, step, alf)}
+
+**Входные данные:** (cipher = "hello", key = "", alf = "abcdefghijklmnopqrstuvwxyz")
+
+**Ожидаемый результат:** ValueError("Empty key")
