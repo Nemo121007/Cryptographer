@@ -50,6 +50,7 @@ def vigenere_cipher_decryption(self, key, alf):
 
     return CryptographerStr(line)
 
+
 def _check_arguments(str, key, alf):
     if key == "":
         raise ValueError("Empty key")
