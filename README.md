@@ -11,6 +11,9 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Nemo121007_Cryptographer&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Nemo121007_Cryptographer)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Nemo121007_Cryptographer&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Nemo121007_Cryptographer)
 
+# Проект-первоисточник реализаций алгоритмов
+https://github.com/Nemo121007/Cryptographer
+
 # Проект, реализующий ряд ручных алгоритмов шифрования
 Статус последнего тестирования: [![Start tests](https://github.com/Nemo121007/Cryptographer/actions/workflows/testing_encryption_algorithms.yml/badge.svg?branch=dev)](https://github.com/Nemo121007/Cryptographer/actions/workflows/testing_encryption_algorithms.yml)
 
